@@ -12,6 +12,16 @@ function Book(title, author, genre, pages, read) {
     }
 }
 
+function addBookToLibrary() {
+    let title = prompt('Enter Title');
+    let author = prompt('Enter Author');
+    let genre = prompt('Enter genre');
+    let pages = prompt('Number of pages');
+    let read = prompt ('Have you read it?');
+    let newBook = new Book(title, author, genre, pages, read);
+    myLibrary.push(newBook);
+}
+
 
 
 // function createTable(data) {

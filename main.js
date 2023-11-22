@@ -1,5 +1,17 @@
 const myLibrary = [];
 
+function Book(title, author, genre, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.genre = genre;
+    this.pages = pages;
+    this.read = read;
+    this.info = () => {
+        let info = `${this.title} is a book by ${author}, it has ${this.pages} pages, the genre is ${this.genre}. Have you read it? ${this.read}`;
+        return info;
+    }
+}
+
 
 
 // function createTable(data) {

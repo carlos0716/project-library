@@ -80,14 +80,48 @@ select {
 
 /* styles */
 
-.card {
-  padding: 4rem 0;
-  border: 1px solid black;  
-  margin: 1rem;
+.main-container {
+  height: 100vh;
+  margin: 0 auto;
+  width: 75%;
+}
 
-  height: 210px;
-  width: 160px;
+.header {
+  background-color: #ff1756;
+  text-align: center;
+}
+
+.main-section {
+  background-color: cadetblue;
+  width: 100%;
+  padding: 5rem;
+  
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  
+  justify-items: center; 
+  
+  
+
+}
+
+.footer {
+  background-color: #ff1756;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid black;  
+  font-size: large;
+  text-align: left;
+  height: 280px;
+  width: 265px;
   background: linear-gradient( #ff1756,#f68b8b );
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(50, 50, 50, 0.1);
+  line-height: 2.5rem;
+  overflow: scroll;
 }

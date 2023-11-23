@@ -48,7 +48,10 @@ const theStand = new Book('The Stand', 'Stephen King', 'Horror', 1018, 'Yes');
 const showButton = document.getElementById('showDialog');
 const favDialog = document.getElementById('favDialog');
 const outputBox = document.querySelector('output');
-const selectEl = favDialog.querySelector('input');
+const newTitle = favDialog.querySelector('#title');
+const newAuthor = favDialog.querySelector('#author');
+const newGenre = favDialog.querySelector('#genre');
+const noOfPages = favDialog.querySelector('#pages')
 const confirmBtn = favDialog.querySelector('#confirmBtn');
 
 // Dialog element functions
@@ -57,7 +60,7 @@ showButton.addEventListener('click',() => {
 });
 
 favDialog.addEventListener('close', (e) => {
-    confirmBtn.value = selectEl.value;
+    confirmBtn.value = newTitle.value;
 })
 
 favDialog.addEventListener('change', (e) => {
@@ -66,7 +69,7 @@ favDialog.addEventListener('change', (e) => {
 
 confirmBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    favDialog.closest(selectEl.value);
+    favDialog.closest(newTitle.value);
 })
 // function createTable(data) {
 //     const table = document.createElement('table');

@@ -83,25 +83,27 @@ select {
 .main-container {
   height: 100vh;
   margin: 0 auto;
-  width: 75%;
+  width: 60%;
 }
 
 .header {
   background-color: #ff1756;
   text-align: center;
+  height: 6%;
 }
 
 .main-section {
   background-color: cadetblue;
   width: 100%;
   padding: 5rem;
-  
+  height: 90%;
+  overflow: scroll;
 }
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   justify-items: center; 
   
   
@@ -110,6 +112,7 @@ select {
 
 .footer {
   background-color: #ff1756;
+  height: 4%;
 }
 
 .card {

@@ -1,3 +1,15 @@
+:root {
+  --clr-primary-600: hsl(344, 100%, 55%);
+  --clr-primary-300: hsl(0, 86%, 75%);
+
+  --clr-neutral-100: hsl(0, 3%, 93%);
+  --clr-neutral-900: hsl(0, 0%, 13%);
+
+  --ff-primary: 'Montserrat', sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary)
+}
 /* Box sizing rules */
 *,
 *::before,
@@ -35,6 +47,8 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+  font-family: var(--ff-body);
 }
 
 /* A elements that don't have a class get default styles */
@@ -89,14 +103,30 @@ select {
 .header {
   background-color: #ff1756;
   text-align: center;
-  height: 6%;
+  height: 10%;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  color: var(--clr-neutral-900);
+}
+
+.header-title-btn {
+  background-color: #f68b8b;
+  padding: 1em 1.5em 1em 1.5em;
+  border-radius: 8px;
+
+  margin-top: 1em;
 }
 
 .main-section {
   background-color: cadetblue;
   width: 100%;
   padding: 5rem;
-  height: 90%;
+  height: 86%;
   overflow: scroll;
 }
 

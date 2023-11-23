@@ -11,6 +11,42 @@
     <div class="main-container">
         <header class="header">
             <h1>Project Library</h1>
+            
+            <dialog id="favDialog">
+                <form action="">
+                    <h3>Add your book</h3>
+                    <ul class="input-container">
+                        <li>
+                            <label for="title">Title</label>
+                            <input id="title" type="text" name="book-title">
+                        </li>
+                        <li>
+                            <label for="author">Author</label>
+                            <input id="author" type="text" name="book-author">
+                        </li>
+                        <li>
+                            <label for="genre">Genre</label>
+                            <input id="genre" type="text" name="book-genre">
+                        </li>
+                        <li>
+                            <label for="pages">Number of pages</label>
+                            <input id="pages" type="tel" name="book-pages">
+                        </li>           
+                    </ul>
+
+                    <div class="cancel-btn">
+                        <button value="cancel" formmethod="dialog">
+                            Cancel
+                        </button>
+
+                        <button id="confirmBtn" value="default">Confirm</button>
+                    </div>
+                </form>
+            </dialog>
+            <div class="button">
+                <button type="button" id="showDialog">Add Book</button>
+            </div>
+            <output></output>
         </header>
         <section class="main-section">
             <div class="btn-container">

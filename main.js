@@ -1,4 +1,8 @@
-const myLibrary = [];
+const myLibrary = [{title: 'Doppelganger',
+                    author: 'Naomi Klein',
+                    genre: 'Nonfiction',
+                    pages: 452,
+                    read: 'No',}, { title: "The Stand Forever Motherfuckers Fuck You All!!!!!!!", author: "Stephen King ARmand Caesar CAligula Moore", genre: "Horror Fiction FAntasy ", pages: 1018, read: "Yes",}];
 
 function Book(title, author, genre, pages, read) {
     this.title = title;
@@ -22,8 +26,48 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
 }
 
+function addCard() {
+    myLibrary.forEach(function (arrayItem) {
+        let title = arrayItem.title;
+        let author = arrayItem.author;
+        let genre = arrayItem.genre;
+        let pages = arrayItem.pages;
+        let read = arrayItem.read;
+        let cardContainer = document.getElementById('card-container');
+        let newCard = document.createElement('p');
+        newCard.classList.add('card');
+        newCard.innerHTML = `Title: ${title}<br> Author: ${author}<br> Genre: ${genre}<br> No. of pages: ${pages}<br> Read? ${read}`;
+        cardContainer.appendChild(newCard);
+      });
+}
+
+const theStand = new Book('The Stand', 'Stephen King', 'Horror', 1018, 'Yes');
 
 
+//  Dialog element variables
+const showButton = document.getElementById('showDialog');
+const favDialog = document.getElementById('favDialog');
+const outputBox = document.querySelector('output');
+const selectEl = favDialog.querySelector('input');
+const confirmBtn = favDialog.querySelector('#confirmBtn');
+
+// Dialog element functions
+showButton.addEventListener('click',() => {
+    favDialog.showModal();
+});
+
+favDialog.addEventListener('close', (e) => {
+    confirmBtn.value = selectEl.value;
+})
+
+favDialog.addEventListener('change', (e) => {
+    outputBox.value = favDialog.returnValue === 'default' ? 'No return value.' : `ReturnValue :${favDialog.returnValue}.`;
+})
+
+confirmBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    favDialog.closest(selectEl.value);
+})
 // function createTable(data) {
 //     const table = document.createElement('table');
 //     const headerRow = document.createElement('tr');

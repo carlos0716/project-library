@@ -1,8 +1,5 @@
-const myLibrary = [{title: 'Doppelganger',
-                    author: 'Naomi Klein',
-                    genre: 'Nonfiction',
-                    pages: 452,
-                    read: 'No',}, { title: "The Stand Forever Motherfuckers Fuck You All!!!!!!!", author: "Stephen King ARmand Caesar CAligula Moore", genre: "Horror Fiction FAntasy ", pages: 1018, read: "Yes",}];
+const myLibrary = [
+                ];
 
 function Book(title, author, genre, pages, read) {
     this.title = title;
@@ -17,28 +14,28 @@ function Book(title, author, genre, pages, read) {
 }
 
 function addBookToLibrary() {
-    let title = prompt('Enter Title');
-    let author = prompt('Enter Author');
-    let genre = prompt('Enter genre');
-    let pages = prompt('Number of pages');
-    let read = prompt ('Have you read it?');
+    let title = newTitle.value;
+    let author = newAuthor.value;
+    let genre = newGenre.value;
+    let pages = noOfPages.value;
+    let read = 'Yes';
     let newBook = new Book(title, author, genre, pages, read);
     myLibrary.push(newBook);
 }
 
 function addCard() {
-    myLibrary.forEach(function (arrayItem) {
-        let title = arrayItem.title;
-        let author = arrayItem.author;
-        let genre = arrayItem.genre;
-        let pages = arrayItem.pages;
-        let read = arrayItem.read;
+    
+        let title = newTitle.value;
+        let author = newAuthor.value;
+        let genre = newGenre.value;
+        let pages = noOfPages.value;
+        let read = 'Yes';
         let cardContainer = document.getElementById('card-container');
         let newCard = document.createElement('p');
         newCard.classList.add('card');
         newCard.innerHTML = `Title: ${title}<br> Author: ${author}<br> Genre: ${genre}<br> No. of pages: ${pages}<br> Read? ${read}`;
         cardContainer.appendChild(newCard);
-      });
+      
 }
 
 const theStand = new Book('The Stand', 'Stephen King', 'Horror', 1018, 'Yes');
@@ -59,18 +56,30 @@ showButton.addEventListener('click',() => {
     favDialog.showModal();
 });
 
-favDialog.addEventListener('close', (e) => {
-    confirmBtn.value = newTitle.value;
-})
+// favDialog.addEventListener('close', (e) => {
+//     confirmBtn.value = newTitle.value;
+// })
 
-favDialog.addEventListener('change', (e) => {
-    outputBox.value = favDialog.returnValue === 'default' ? 'No return value.' : `ReturnValue :${favDialog.returnValue}.`;
-})
+// favDialog.addEventListener('change', (e) => {
+//     outputBox.value = favDialog.returnValue === 'default' ? 'No return value.' : `ReturnValue :${favDialog.returnValue}.`;
+// })
+
+// function openCheck(dialog) {
+//     if (dialog.open) {
+//         console.log('Dialog open');
+//     } else {
+//         console.log('Dialog closed');
+//     }
+// }
 
 confirmBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    favDialog.closest(newTitle.value);
+    addBookToLibrary();
+    addCard();
+    document.getElementById('book-form').reset();
+    favDialog.close();
 })
+
 // function createTable(data) {
 //     const table = document.createElement('table');
 //     const headerRow = document.createElement('tr');
@@ -123,3 +132,9 @@ confirmBtn.addEventListener('click', (event) => {
 //     newCard.textContent = `${title}  ${author}  ${genre}  ${pages}`;
 //     cardContainer.appendChild(newCard);
 //   });
+
+// {title: 'Doppelganger',
+//                     author: 'Naomi Klein',
+//                     genre: 'Nonfiction',
+//                     pages: 452,
+//                     read: 'No',}, { title: "The Stand Forever Motherfuckers Fuck You All!!!!!!!", author: "Stephen King ARmand Caesar CAligula Moore", genre: "Horror Fiction FAntasy ", pages: 1018, read: "Yes",}

@@ -30,12 +30,15 @@ function addCard() {
         let genre = newGenre.value;
         let pages = noOfPages.value;
         let read = 'Yes';
+        let removeButton = document.createElement('button');
+        removeButton.classList.add('remove-button');
+        removeButton.innerText = 'Remove';
         let cardContainer = document.getElementById('card-container');
         let newCard = document.createElement('p');
         newCard.classList.add('card');
-        newCard.innerHTML = `Title: ${title}<br> Author: ${author}<br> Genre: ${genre}<br> No. of pages: ${pages}<br> Read? ${read}`;
+        newCard.innerHTML = `Title: ${title}<br> Author: ${author}<br> Genre: ${genre}<br> No. of pages: ${pages}<br> Read? ${read}<br>`;
         cardContainer.appendChild(newCard);
-      
+        newCard.appendChild(removeButton);
 }
 
 const theStand = new Book('The Stand', 'Stephen King', 'Horror', 1018, 'Yes');
@@ -78,7 +81,9 @@ confirmBtn.addEventListener('click', (event) => {
     addCard();
     document.getElementById('book-form').reset();
     favDialog.close();
-})
+});
+
+const indexNo = (element) => element === myLibrary.title
 
 // function createTable(data) {
 //     const table = document.createElement('table');
